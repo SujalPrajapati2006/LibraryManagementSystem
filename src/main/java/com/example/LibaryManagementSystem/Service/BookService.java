@@ -42,7 +42,7 @@ public class BookService {
          if(book != null && !book.isBorrowed() && user != null){
               book.setBorrowedBy(user);
               book.setBorrowed(true);
-              return  save(book);
+              return  book.save(book);
          }
          return  null;
     }
@@ -51,7 +51,7 @@ public class BookService {
           if(book != null && book.isBorrowed()){
                book.setBorrowedBy(null);
                book.setBorrowed(false);
-               return  save(book);
+               return  book.save(book);
          }
           return null;
      }
